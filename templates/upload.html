@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload File</title>
+</head>
+<body>
+  <h1>Upload File to Google Drive</h1>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+  </form>
+  <h2>Uploaded Files</h2>
+  <ul>
+    {% for filename, url, uploaded_at in files %}
+      <li><a href="{{ url }}" target="_blank">{{ filename }}</a> - {{ uploaded_at }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
